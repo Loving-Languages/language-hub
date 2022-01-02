@@ -1,0 +1,18 @@
+{
+    "app": {
+        "name": "Language Hub",
+        "tagline": "Learn languages free, forever",
+        "copyright": "© {0}, Nathan Seymour"
+    },
+    "nav": {
+        "home": "Home"
+    },
+    "mkt": {
+        "title": {
+            "contentByProfessionalTeachers": "Content by Professional Teachers"
+        },
+        "content": {
+            "contentByProfessionalTeachers": "Our content creators have years of experience teaching languages, which means that they'll give you the keys to learn successfully."
+        }
+    }
+}

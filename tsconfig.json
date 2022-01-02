@@ -6,7 +6,10 @@
     "strict": false,
     "jsx": "preserve",
     "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
     "baseUrl": "src",
+    "sourceMap": true,
     "paths": {
       "@/*": ["./*"],
       "public/*": ["../public/*"]

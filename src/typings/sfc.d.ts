@@ -9,5 +9,11 @@ declare module '*.md' {
 }
 
 declare module '*.site' {
-    export default string;
+    const value : string;
+    export default value;
+}
+
+declare module '*.svg' {
+    const value : string;
+    export default value;
 }

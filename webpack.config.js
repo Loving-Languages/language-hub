@@ -1,10 +1,12 @@
 const path = require('path');
+const webpack = require('webpack');
 const { VueLoaderPlugin } = require('vue-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: './src/main.ts',
     mode: 'development',
+    devtool: 'source-map',
     output: {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist'),
@@ -20,6 +22,9 @@ module.exports = {
         static: {
             directory: path.join(__dirname, 'dist'),
         },
+        historyApiFallback: {
+            index: 'index.html'
+        },
         compress: true,
         port: 9000
     },
@@ -28,6 +33,10 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /\.svg$/,
+                type: 'asset'
+            },
             {
                 test: /\.site$/,
                 loader: 'site-loader'
@@ -63,6 +72,10 @@ module.exports = {
         new VueLoaderPlugin(),
         new HtmlWebpackPlugin({
             template: 'public/index.html'
+        }),
+        new webpack.DefinePlugin({
+            '__VUE_OPTIONS_API__': true,
+            '__VUE_PROD_DEVTOOLS__': false
         })
     ]
 };
