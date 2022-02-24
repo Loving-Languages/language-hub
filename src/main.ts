@@ -2,15 +2,15 @@ import { createApp } from 'vue';
 import {createRouter, createWebHistory, RouteRecordRaw} from 'vue-router';
 import i18n from '@/i18n';
 
-import site from 'public/lang-hub.site';
-
 import App from '@/App.vue';
 import Home from '@/pages/Home.vue';
 import Resources from '@/pages/Resources.vue';
+import Contributing from '@/pages/Contributing.vue';
 
 const routes : RouteRecordRaw[] = [
     { path: '/', component: Home },
-    { path: '/resources', component: Resources }
+    { path: '/resources', component: Resources },
+    { path: '/contributing', component: Contributing }
 ];
 
 const router = createRouter({

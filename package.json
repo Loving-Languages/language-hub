@@ -17,9 +17,11 @@
     "vue-router": "^4.0.12"
   },
   "devDependencies": {
+    "@types/animejs": "^3.1.4",
     "@types/marked": "^4.0.1",
     "@vue/compiler-sfc": "^3.2.26",
     "css-loader": "^6.5.1",
+    "front-matter": "^4.0.2",
     "html-webpack-plugin": "^5.5.0",
     "marked": "^4.0.8",
     "raw-loader": "^4.0.2",

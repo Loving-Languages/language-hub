@@ -1,13 +1,14 @@
 <template>
     <div class="home">
         <div class="home-card main-card">
-            <h1>{{ $t('app.tagline') }}</h1>
-
             <lottie-animation
-                :animation-data="animations[currentAnimationIndex]"
+                ref="animation"
+                :animation-data="animations[currentAnimationIndex].animationData"
                 :on-complete="onAnimationCompleteCallback"
                 :loop="false"
             />
+
+            <h1>{{ $t('app.tagline') }}</h1>
         </div>
         <div class="home-card content-cards">
             <ContentCard
@@ -32,8 +33,6 @@ import AirportSVG from 'public/icon/icons8-airport.svg';
 import HeartAnimationSimple from 'public/animated/icons8-heart.json';
 import PrettyHeartAnimation from 'public/animated/icons8-heart-pretty.json';
 import SmallHeartsAnimation from 'public/animated/icons8-small-hearts.json';
-import HeartActivityAnimation from 'public/animated/icons8-activity.json';
-import ChatAnimation from 'public/animated/icons8-chat.json';
 
 export default {
     name: 'Home',
@@ -45,11 +44,18 @@ export default {
         return {
             currentAnimationIndex: 0,
             animations: [
-                ChatAnimation,
-                HeartAnimationSimple,
-                PrettyHeartAnimation,
-                SmallHeartsAnimation,
-                HeartActivityAnimation,
+                {
+                    animationData: HeartAnimationSimple,
+                    delayAfter: 1000
+                },
+                {
+                    animationData: PrettyHeartAnimation,
+                    delayAfter: 0
+                },
+                {
+                    animationData: SmallHeartsAnimation,
+                    delayAfter: 3000
+                }
             ],
             contentCards: [
                 {
@@ -79,7 +85,7 @@ export default {
             }
         },
         onAnimationCompleteCallback() {
-            setTimeout(this.nextAnimation, 1000);
+            setTimeout(this.nextAnimation, this.animations[this.currentAnimationIndex].delayAfter);
         }
     }
 };
@@ -90,7 +96,7 @@ export default {
         font-family: $font-main;
         width: 100vw;
         height: 70vh;
-        padding: 5em;
+        padding: 4em;
 
         &:nth-child(even) {
             background: rgba(0,0,0,0.1);
@@ -99,9 +105,14 @@ export default {
         &.main-card {
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
 
             .animation-container {
-                height: 100%;
+                height: 70%;
+            }
+
+            h1 {
+                text-align: center;
             }
         }
 

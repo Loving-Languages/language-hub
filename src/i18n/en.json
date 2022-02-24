@@ -1,11 +1,13 @@
 {
     "app": {
         "name": "Language Hub",
-        "tagline": "Learn languages free, forever",
-        "copyright": "© {0}, Nathan Seymour"
+        "tagline": "For the love of languages",
+        "copyright": "© {0} Nathan Seymour"
     },
     "nav": {
-        "home": "Home"
+        "home": "Home",
+        "resources": "Resources",
+        "contributing": "Contributing"
     },
     "mkt": {
         "title": {
@@ -13,6 +15,15 @@
         },
         "content": {
             "contentByProfessionalTeachers": "Our content creators have years of experience teaching languages, which means that they'll give you the keys to learn successfully."
+        }
+    },
+    "lang": {
+        "english": "English",
+        "german": "German"
+    },
+    "page": {
+        "german": {
+            "beginner-resources": "Beginner Resources"
         }
     }
 }

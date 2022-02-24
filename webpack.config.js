@@ -38,8 +38,8 @@ module.exports = {
                 type: 'asset'
             },
             {
-                test: /\.site$/,
-                loader: 'site-loader'
+                test: /\.md$/,
+                loader: 'md-loader'
             },
             {
                 test: /\.tsx?$/,

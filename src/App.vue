@@ -1,9 +1,10 @@
 <template>
     <header>
-        <span>{{ $t('app.name') }}</span>
+        <h3>{{ $t('app.name') }}</h3>
         <nav>
             <router-link to="/">{{ $t('nav.home') }}</router-link>
             <router-link to="/resources">{{ $t('nav.resources') }}</router-link>
+            <router-link to="/contributing">{{ $t('nav.contributing') }}</router-link>
         </nav>
     </header>
 
@@ -29,6 +30,7 @@ export default {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
 
         nav {
             a {
