@@ -19,11 +19,16 @@
     },
     "lang": {
         "english": "English",
-        "german": "German"
+        "german": "German",
+        "language": "Language"
     },
     "page": {
         "german": {
             "beginner-resources": "Beginner Resources"
+        },
+        "language": {
+            "how-to-learn-a-foreign-language": "How to Learn a Foreign Language",
+            "how-to-learn-your-native-language": "How to Learn Your Native Language"
         }
     }
 }

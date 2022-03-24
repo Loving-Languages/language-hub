@@ -1,11 +1,19 @@
 <template>
     <header>
-        <h3>{{ $t('app.name') }}</h3>
-        <nav>
-            <router-link to="/">{{ $t('nav.home') }}</router-link>
-            <router-link to="/resources">{{ $t('nav.resources') }}</router-link>
-            <router-link to="/contributing">{{ $t('nav.contributing') }}</router-link>
-        </nav>
+        <router-link class="app-title" to="/">{{ $t('app.name') }}</router-link>
+        <div class="links-and-locale">
+            <nav>
+                <router-link to="/">{{ $t('nav.home') }}</router-link>
+                <router-link to="/resources">{{ $t('nav.resources') }}</router-link>
+                <router-link to="/contributing">{{ $t('nav.contributing') }}</router-link>
+            </nav>
+            <select @change="changeLocale">
+                <option value="es-ES">Spanish (Spain)</option>
+                <option value="en-US">English (US)</option>
+                <option value="de-DE">German (Germany)</option>
+                <option value="fr-FR">French (France)</option>
+            </select>
+        </div>
     </header>
 
     <router-view></router-view>
@@ -16,10 +24,17 @@
 </template>
 
 <script lang="ts">
+import i18n from '@/i18n';
 import '@/styles/main.scss';
 
 export default {
-  name: 'App'
+    name: 'App',
+    methods: {
+        changeLocale(e) {
+            i18n.global.locale = e.target.value;
+            window.localStorage.setItem('preferredLocale', e.target.value);
+        }
+    }
 }
 </script>
 
@@ -32,8 +47,23 @@ export default {
         justify-content: space-between;
         align-items: center;
 
-        nav {
-            a {
+        .app-title {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+        }
+
+        .links-and-locale {
+            display: flex;
+            flex-direction: row;
+
+            nav {
+                a {
+                    margin-left: 1em;
+                }
+            }
+
+            select {
                 margin-left: 1em;
             }
         }

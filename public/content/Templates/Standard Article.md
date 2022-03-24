@@ -1,9 +1,10 @@
 ---
-title: 'page.german.past-participle'
+title: 'page.template'
 tags:
 	- 'Language'
 created: '{{date}}'
 updated: '{{date}}'
+published: false
 ---
 %start[en]
 # Write something in English!

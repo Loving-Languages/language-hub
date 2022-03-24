@@ -1,5 +1,5 @@
 ---
-title: 'page.german.past-participle'
+title: 'page.language.how-to-learn-a-foreign-language'
 tags:
 	- 'Language'
 created: '{{date}}'

@@ -20,8 +20,10 @@ const messages = {
     }
 };
 
+const preferredLocale = window.localStorage.getItem('preferredLocale');
+
 export default createI18n({
-    locale: navigator.language,
+    locale: preferredLocale || 'en',
     fallbackLocale: 'en',
     messages
 });

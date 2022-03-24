@@ -9,7 +9,7 @@ import Contributing from '@/pages/Contributing.vue';
 
 const routes : RouteRecordRaw[] = [
     { path: '/', component: Home },
-    { path: '/resources', component: Resources },
+    { path: '/resources/:resource(.*)?', component: Resources },
     { path: '/contributing', component: Contributing }
 ];
 
